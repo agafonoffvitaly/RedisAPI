@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisAPI", "RedisAPI\RedisA
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8E3B54CF-9AF0-4E1C-A5C2-3AB0B37ECB7F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{0D9F94F5-46AB-4096-B3A2-0979F86EEA6F}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Users\v.agafonov\Desktop\ApplicationArchitecture.JPG = ..\..\..\Users\v.agafonov\Desktop\ApplicationArchitecture.JPG
+		..\..\..\Users\v.agafonov\Desktop\ApplicationEndPoints.JPG = ..\..\..\Users\v.agafonov\Desktop\ApplicationEndPoints.JPG
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
