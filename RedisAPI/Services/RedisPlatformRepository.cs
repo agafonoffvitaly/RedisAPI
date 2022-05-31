@@ -20,25 +20,45 @@ public class RedisPlatformRepository : IPlatformRepository
         throw new ArgumentNullException(nameof(plat));
         }
 
-        var db = _redis.GetDatabase();
+        var db = _redis.GetDatabase(1);
         var serialPlat = JsonSerializer.Serialize(plat);
 
-        db.StringSet(plat.Id, serialPlat);
+        //For Strings key-value
+        //db.StringSet(plat.Id, serialPlat);
+        
+        //For Sets Key: id-value, id-value
+        //db.SetAdd("PlatformSet", serialPlat);
 
-        db.SetAdd("PlatformSet", serialPlat);
+        //For Hash
+        db.HashSet("hashplatform", new HashEntry[]
+            { new HashEntry(plat.Id, serialPlat)});
 
     }
 
     public IEnumerable<Platform?>? GetAllPlatforms()
     {
-        var db = _redis.GetDatabase();
+        var db = _redis.GetDatabase(1);
 
-        var completeSet = db.SetMembers("PlatformSet");
+        //For Sets Key: id-value, id-value
+        //var completeSet = db.SetMembers("PlatformSet");
+        //if (completeSet.Length > 0)
+        //{
+        //    var obj = Array.ConvertAll(completeSet, val =>
+        //        JsonSerializer.Deserialize<Platform>(val)).ToList();
 
-        if (completeSet.Length > 0)
+        //    return obj;
+        //}
+
+
+
+        //For Hash
+        var completeHash = db.HashGetAll("hashplatform");
+
+
+        if (completeHash.Length > 0)
         {
-            var obj = Array.ConvertAll(completeSet, val =>
-                JsonSerializer.Deserialize<Platform>(val)).ToList();
+            var obj = Array.ConvertAll(completeHash, val =>
+                JsonSerializer.Deserialize<Platform>(val.Value)).ToList();
 
             return obj;
         }
@@ -48,9 +68,10 @@ public class RedisPlatformRepository : IPlatformRepository
 
     public Platform? GetPlatformBuId(string Id)
     {
-        var db = _redis.GetDatabase();
+        var db = _redis.GetDatabase(1);
 
-        var plat = db.StringGet(Id);
+        //var plat = db.StringGet(Id);
+        var plat = db.HashGet("hashplatform", Id);
 
         if (!string.IsNullOrEmpty(plat))
         {
