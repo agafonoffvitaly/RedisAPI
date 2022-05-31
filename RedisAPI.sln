@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisAPI", "RedisAPI\RedisAPI.csproj", "{2895B5D3-4359-4245-87CF-7557928B7D8B}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8E3B54CF-9AF0-4E1C-A5C2-3AB0B37ECB7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2895B5D3-4359-4245-87CF-7557928B7D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2895B5D3-4359-4245-87CF-7557928B7D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2895B5D3-4359-4245-87CF-7557928B7D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2895B5D3-4359-4245-87CF-7557928B7D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E3B54CF-9AF0-4E1C-A5C2-3AB0B37ECB7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E3B54CF-9AF0-4E1C-A5C2-3AB0B37ECB7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E3B54CF-9AF0-4E1C-A5C2-3AB0B37ECB7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E3B54CF-9AF0-4E1C-A5C2-3AB0B37ECB7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D322436F-7807-48A8-B43D-0EE80002C222}
+	EndGlobalSection
+EndGlobal
